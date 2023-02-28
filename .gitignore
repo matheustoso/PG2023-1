@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/c++,macos,visualstudiocode,opencv
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,macos,visualstudiocode,opencv
 
+app.dSYM/
+app
+
 ### C++ ###
 # Prerequisites
 *.d
@@ -77,6 +80,7 @@ Temporary Items
 */cmake_install.cmake
 
 ### VisualStudioCode ###
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
