@@ -80,6 +80,8 @@ int main()
 	// Definindo as dimens�es da viewport com as mesmas dimens�es da janela da aplica��o
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
+	glViewport(0, 0, width, height);
+
 
 	// Compilando e buildando o programa de shader
 	Shader shader("shader/shader.vs", "shader/shader.fs");
@@ -111,25 +113,20 @@ int main()
 
 		glBindVertexArray(VAO); //Conectando ao buffer de geometria
 
-		glViewport(0, 0, width/2, height/2);		
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
+		// Chamada de desenho - drawcall
+		// Poligono Preenchido - GL_TRIANGLES
 
-		glViewport(width/2, 0, width/2, height/2);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
 
-		glViewport(0, height/2, width/2, height/2);	
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
+		// Chamada de desenho - drawcall
+		// CONTORNO - GL_LINE_LOOP
+		// PONTOS - GL_POINTS
 
-		glViewport(width/2, height/2, width/2, height/2);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glDrawArrays(GL_LINE_LOOP, 0, 3);
+		//glDrawArrays(GL_LINE_LOOP, 3, 3);
+
 		glDrawArrays(GL_POINTS, 0, 3);
+		
 
 		glBindVertexArray(0); //Desconectando o buffer de geometria
 
@@ -165,9 +162,9 @@ int setupGeometry()
 	// Pode ser arazenado em um VBO �nico ou em VBOs separados
 	GLfloat vertices[] = {
 		//x   y     z    r    g    b
-		-2.0 * 100 + 400, 2.0 * 100 + 300, 0.0, 1.0, 0.0, 1.0, //v0
-		 2.0 * 100 + 400, 2.0 * 100 + 300, 0.0, 1.0, 0.0, 1.0, //v1
-		 0.0 * 100 + 400, -2.0 * 100 + 300,  0.0, 1.0, 0.0, 1.0  //v2
+		-0.5 * 100 + 400, -0.5 * 100 + 300, 0.0, 1.0, 0.0, 0.0, //v0
+		 0.5 * 100 + 400, -0.5 * 100 + 300, 0.0, 0.0, 1.0, 0.0, //v1
+		 0.0 * 100 + 400, 0.5 * 100 + 300,  0.0, 0.0, 0.0, 1.0  //v2
 	};
 
 	GLuint VBO, VAO;

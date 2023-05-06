@@ -81,6 +81,9 @@ int main()
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
 
+	glViewport(width/2, height/2, width/2, height/2);
+
+
 	// Compilando e buildando o programa de shader
 	Shader shader("shader/shader.vs", "shader/shader.fs");
 
@@ -111,22 +114,7 @@ int main()
 
 		glBindVertexArray(VAO); //Conectando ao buffer de geometria
 
-		glViewport(0, 0, width/2, height/2);		
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
-
-		glViewport(width/2, 0, width/2, height/2);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
-
-		glViewport(0, height/2, width/2, height/2);	
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glDrawArrays(GL_LINE_LOOP, 0, 3);
-		glDrawArrays(GL_POINTS, 0, 3);
-
-		glViewport(width/2, height/2, width/2, height/2);
+		
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glDrawArrays(GL_LINE_LOOP, 0, 3);
 		glDrawArrays(GL_POINTS, 0, 3);
