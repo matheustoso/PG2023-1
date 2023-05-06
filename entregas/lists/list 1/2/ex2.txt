@@ -1,0 +1,9 @@
+Primitivas gráficas são geometrias utilizadas para a 
+renderização de elementos gráficos, como pontos, polígonos e
+malhas. A partir delas podemos criar objetos mais complexos
+para representar objetos.
+
+O armazenamento das vértices no OpenGL se dá a partir das 
+coordenadas (x,y,z) de cada vértice e seus atributos relevantes 
+(cor, Coordenadas de Texturas...), que são armazenados e mapeados com o uso de 
+Vertex Array Objects, Vertex Buffer Objects, e Element Buffer Objects.

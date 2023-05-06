@@ -1,0 +1,11 @@
+GLSL é a OpenGL Shading Language, uma linguagem parecida com C, 
+com funções específicas para manipulação de matrizes e vetores.
+
+Os 2 shaders obrigatório são:
+
+    Vertex Shader: processa cada vértice individualmente, o principal propósito
+        é transformar coordenadas. Também nos permite processar os atributos de 
+        cada vértice (Posição, Coordenadas de Textura, Cor).
+
+    Fragment Shader: processa cada fragmento (área), e tem o principal propósito 
+        de calcular a cor final de cada pixel da área. 

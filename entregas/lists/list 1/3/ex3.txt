@@ -1,0 +1,39 @@
+VBO: O VBO armazena em um array todos os dados das vértices, como posição e cor. 
+    Esses dados são organizados por vértice sequencialmente, por exemplo:
+    [
+        1.0, 1.0, 0.0, 1.0, 0.5, 0.0,
+        0.0, 0.0, 0.0, 0.0, 0.5, 1.0,
+        0.0, 1.0, 0.0, 0.0, 1.0, 0.0,
+    ]
+    Aqui temos 3 vértices, uma em cada linha para facilitar a visualização,
+    e em cada linha temos separado por vírgula, respectivamente, 
+    as coordenadas X, Y, e Z, e os valores R, G, e B, de cada vértice. 
+
+VAO: Um VAO encapsula um VBO definindo o formato dos seus dados e mapeando
+    eles para seus respectivos atributos. Sendo assim, para o exemplo utilizado
+    acima, o VAO define que cada vértice tem 24 bytes (4 bytes por float), e que 
+    as coordenadas estão nos primeiro 12 bytes, e a cor está nos últimos 12 bytes.
+
+
+EBO: O EBO permite associar cada vértice a seu respectivo índice, para evitar 
+    vértices repetidas no VBO. O EBO consequentemente é encapsulado por um VAO junto de seu respectivo VBO,
+    permitindo que objetos sejam definidos a partir dos índices no EBO, e não a partir da ordem do VBO.
+    Por exemplo:
+    VBO = 
+        [
+            1.0, 1.0, 0.0, 1.0, 0.5, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.5, 1.0,
+            0.0, 1.0, 0.0, 0.0, 1.0, 0.0,
+            1.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        ]
+    EBO = 
+        [
+            0,1,2,
+            1,2,3,
+        ]
+    Aqui temos 4 vértices, e 2 triângulos que compartilham duas dessas vértices, sem a necessidade de repetir 
+    as vértices no VBO.
+
+Assim concluímos que o VBO armazena os atributos de cada vértice, o EBO caracteriza a utilização dessas 
+vértices para a formação de primitivas, e o VAO define o formato dos dados do VBO e mapeia os atributos
+de cada vértice assim como as vértices definidas pelo EBO para a formação das primitivas.
