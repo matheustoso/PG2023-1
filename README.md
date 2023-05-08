@@ -10,3 +10,6 @@ Graphics Processing Class taken at Unisinos on the first semester of 2023
     
   Lista 2
     -> entregas/lists/list 2
+    
+  Trabalho GA
+    -> entregas/TGA/PG
