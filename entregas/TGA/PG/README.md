@@ -1,4 +1,4 @@
-### Para executar o jogo, basta clonar o repositório e abrir o arquivo TGA.sln com o visual studio, e executar no VS na função de Debug x64.
+### Para executar o jogo, basta clonar o repositório e abrir o arquivo PG.sln com o visual studio, e executar no VS na função de Debug x64.
 
 ## Controles
 ### A qualquer momento
