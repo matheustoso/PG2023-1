@@ -76,7 +76,7 @@ void Game::Init()
 	this->Levels.push_back(four);
 	this->Level = 0;
 	// particles 
-	Particles = new ParticleGenerator(ResourceManager::GetShader("particle"), ResourceManager::GetTexture("particle"), 500);
+	Particles = new ParticleGenerator(ResourceManager::GetShader("particle"), ResourceManager::GetTexture("particle"), 1500);
 	// configure entities
 	glm::vec2 playerPos(this->Width / 2.0f - PLAYER_SIZE.x / 2.0f, this->Height / 2.0f - PLAYER_SIZE.y / 2.0f);
 	glm::vec2 projectilePos = playerPos + glm::vec2(PLAYER_SIZE.x / 2.0f + PROJECTILE_SIZE.x / 2.2f, PLAYER_SIZE.y / 2.0f);
