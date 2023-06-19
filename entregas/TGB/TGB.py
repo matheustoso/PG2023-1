@@ -186,8 +186,14 @@ def update_image(image, blur, contrast, brightness, sharpen, emboss, contour, fl
 # ---------------------------------------------------- #
 
 # DIRECTORIES #
-work_dir = os.getcwd()
-work_dir = os.path.join(work_dir, 'entregas', 'TGB')
+
+###  macOS  ###
+#work_dir = os.getcwd()
+#work_dir = os.path.join(work_dir, 'entregas', 'TGB')
+###---------###
+### Windows ###
+work_dir = ''
+###---------###
 icon_dir = os.path.join(work_dir, 'assets', 'icons')
 sticker_dir = os.path.join(work_dir, 'assets', 'stickers')
 # ---------------------------------------------------- #
@@ -425,6 +431,7 @@ while True:
             graph.draw_image(data=bio.getvalue(), location=(0, window['-IMAGE-'].get_size()[1]))
         
         if event == '-BACK-':
+            graph_save = False
             graph.erase()
             current_sticker = None
             window['-EDITOR-'].update(visible=True)
